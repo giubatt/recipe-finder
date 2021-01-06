@@ -10,17 +10,24 @@
     "dev": "nodemon ./src/index.js",
     "lint": "eslint ./src/ --ignore-path .gitignore --ignore-pattern internals/scripts",
     "lint:fix": "yarn lint --fix",
-    "test": "jest",
+    "test": "jest --watch",
     "validate": "yarn lint && yarn test"
   },
   "dependencies": {
+    "@giphy/js-fetch-api": "^2.0.1",
+    "@types/jest": "^26.0.19",
     "body-parser": "^1.19.0",
     "compression": "^1.7.4",
     "dotenv-safe": "^8.2.0",
     "express": "^4.17.1",
     "express-validation": "^3.0.6",
+    "helmet": "^4.3.1",
+    "http-status": "^1.5.0",
     "joi": "^17.3.0",
-    "node-fetch": "^2.6.1"
+    "method-override": "^3.0.0",
+    "morgan": "^1.10.0",
+    "node-fetch": "^2.6.1",
+    "winston": "^3.3.3"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
