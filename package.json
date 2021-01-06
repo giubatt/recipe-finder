@@ -1,0 +1,34 @@
+{
+  "name": "recipe-finder",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:giubatt/recipe-finder.git",
+  "author": "Giuseppe Battistella <giuseppe.battistella@datarisk.io>",
+  "license": "MIT",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node ./src/index.js",
+    "dev": "nodemon ./src/index.js",
+    "lint": "eslint ./src/ --ignore-path .gitignore --ignore-pattern internals/scripts",
+    "lint:fix": "yarn lint --fix",
+    "test": "jest",
+    "validate": "yarn lint && yarn test"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "dotenv-safe": "^8.2.0",
+    "express": "^4.17.1",
+    "express-validation": "^3.0.6",
+    "joi": "^17.3.0",
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "eslint": "^7.17.0",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "jest": "^26.6.3",
+    "nodemon": "^2.0.6",
+    "prettier": "^2.2.1"
+  }
+}
