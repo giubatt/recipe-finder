@@ -12,6 +12,10 @@ exports.getRecipes = async (ingredients) => {
   const data = await response.json()
   const recipes = data.results
 
+  return exports.formatRecipes(recipes)
+}
+
+exports.formatRecipes = (recipes) => {
   const recipePromises = recipes.map(async (recipe) => ({
     title: recipe.title,
     ingredients: recipe.ingredients.split(`, `).sort(),
@@ -21,5 +25,3 @@ exports.getRecipes = async (ingredients) => {
 
   return Promise.all(recipePromises)
 }
-
-exports.getRecipes([`onion`, `tomato`, `eggs`]).then(console.log)
