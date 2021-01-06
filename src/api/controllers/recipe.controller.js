@@ -14,10 +14,12 @@ exports.getRecipes = async (ingredients) => {
 
   const recipePromises = recipes.map(async (recipe) => ({
     title: recipe.title,
-    ingredients: recipe.ingredients.split(`, `),
+    ingredients: recipe.ingredients.split(`, `).sort(),
     link: recipe.href,
     gif: await gifController.getGIF(recipe.title),
   }))
 
   return Promise.all(recipePromises)
 }
+
+exports.getRecipes([`onion`, `tomato`, `eggs`]).then(console.log)
